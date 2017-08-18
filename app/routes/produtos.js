@@ -9,7 +9,7 @@ module.exports = function(app) {
         });
 
         connection.query('select * from livros', (err, result) => {
-            res.send(result);
+            res.render('produtos/lista', {lista : result});
         });
 
         connection.end();
