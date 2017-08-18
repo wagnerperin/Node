@@ -1,8 +1,6 @@
 var app = require('./config/express')();
+var rotasProdutos = require('./app/routes/produtos')(app);
 
-app.get('/produtos', (req, res) => {
-    res.render("produtos/lista");
-});
 
 app.listen(3000, () => {
     console.log('Servidor iniciado.');
