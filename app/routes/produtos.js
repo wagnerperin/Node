@@ -1,4 +1,4 @@
-var dbConnection = require('../infra/dbConnection');
+var dbConnection = require('../infra/connectionFactory');
 
 module.exports = function(app) {
     app.get('/produtos', (req, res) => {
