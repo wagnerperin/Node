@@ -1,7 +1,7 @@
 var http = require('http');
 
 describe('#ProdutosController', function(){
-    it('#listagem json', function(funcaoFinalizacao){
+    it('#listagem json', function(done){
         var config = {
             hostname : 'localhost',
             port : 3000,
@@ -18,7 +18,7 @@ describe('#ProdutosController', function(){
             if(res.headers['content-type'] == 'application/json; charset=utf-8'){
                 console.log('Content-type Ok.');
             }
-            funcaoFinalizacao();
+            done();
         });
     });
 });
