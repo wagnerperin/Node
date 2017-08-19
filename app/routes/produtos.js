@@ -5,7 +5,14 @@ module.exports = function(app) {
 
 
         produtosDAO.lista((err, result) => {
-            res.render('produtos/lista', {lista : result});
+            res.format({
+                html: function(){
+                    res.render('produtos/lista', {lista : result});
+                },
+                json: function() {
+                    res.json(result);
+                }
+            });
         });
 
         connection.end();
