@@ -8,4 +8,24 @@ describe('#ProdutosController', function(){
             .expect('Content-Type', /json/)
             .expect(200, done);
     });
+
+    it('#cadastro de produtos invalidos', function(done){
+        request.post('/produtos')
+            .send({
+                titulo:'',
+                descricao:"teste",
+                preco:"100,50"
+            })
+            .expect(400, done);
+    });
+
+    it('#cadastro de produtos validos', function(done){
+        request.post('/produtos')
+            .send({
+                titulo:'teste 1',
+                descricao:"teste 1",
+                preco:100.20
+            })
+            .expect(302, done);
+    });
 });
