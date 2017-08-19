@@ -12,15 +12,15 @@
         <form action="/produtos" method="post">
             <div>
                 <label for="titulo">Titulo </label>
-                <input id="titulo" type="text" name="titulo" placeholder="Coloque aqui o titulo do livro"/>
+                <input id="titulo" type="text" name="titulo" value="<%=produto.titulo%>" placeholder="Coloque aqui o titulo do livro"/>
             </div>
             <div>
                 <label for="titulo">Preco </label>
-                <input id="preco" type="text" name="preco" placeholder="10.00"/>
+                <input id="preco" type="text" name="preco" value="<%=produto.preco%>" placeholder="10.00"/>
             </div>
             <div>
                 <label for="descricao">Descricao </label>
-                <textarea cols="30" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"></textarea>
+                <textarea cols="30" rows="10" id="descricao" name="descricao" placeholder="Fale sobre o livro"><%=produto.descricao%> </textarea>
             </div>
             <input type="submit" value="Cadastrar"/>
         </form>
